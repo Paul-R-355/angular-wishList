@@ -10,7 +10,7 @@ import { ListaDestinoComponent } from './lista-destino/lista-destino.component';
   declarations: [
     AppComponent,
     DestinoViajeComponent,
-    ListaDestinoComponent
+    ListaDestinoComponent,
   ],
   imports: [
     BrowserModule,
