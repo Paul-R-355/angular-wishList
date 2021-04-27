@@ -21,6 +21,8 @@
                 {{destino.descripcion}}
             </p>
         </div>
-        <a href="#" class="btn-card">Mas Info.</a>
+        <a href="#" class="btn-card" (click)="ir()">Ir</a>
+        <!--usaremos display que dejara mostrar el spam dependiendo de si esta seleccionado o no-->
+        <span [style.display]="destino.isSelected() ? '' : 'none'"> - PREFERIDO - </span>
     </div>
 </div>

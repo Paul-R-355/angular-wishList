@@ -28,4 +28,12 @@ export class ListaDestinoComponent implements OnInit {
     return false //para que no recargue la pagina pues vinculamos el evento de un boton
   }
 
+  elegido(dest:DestinoVije){
+    this.destinos.forEach(
+      (valorActual)=>{
+        valorActual.setSelected(false);
+      });
+    dest.setSelected(true);
+  }
+
 }
