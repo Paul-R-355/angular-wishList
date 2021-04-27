@@ -18,10 +18,10 @@ export class ListaDestinoComponent implements OnInit {
 
   }
 
-  guardar(nombre:string,url:string):boolean{//retorno boolean por ser el evento de un boton clic recarga la pagina hace submit
+  guardar(nombre:string,url:string,descripcion:string):boolean{//retorno boolean por ser el evento de un boton clic recarga la pagina hace submit
 
     //console.log(nombre);
-    this.destinos.push(new DestinoVije(nombre,url))
+    this.destinos.push(new DestinoVije(nombre,url,descripcion))
     //console.log(new DestinoVije(nombre,url));
     console.log(this.destinos);
 
