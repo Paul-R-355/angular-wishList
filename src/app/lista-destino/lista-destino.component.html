@@ -32,6 +32,9 @@
     <br>
     <br>
     <div class="row">
-        <app-destino-viaje *ngFor="let destino of destinos" [destino]="destino"></app-destino-viaje>
+        <!--elegido($event) event pide o pasa el objeto que es necesario para la ejecucion pero se puede pasar el objeto destino qu en nuestro cso es el objeto que requeririamos-->
+        <app-destino-viaje *ngFor="let destino of destinos" [destino]="destino"
+        (clicked)="elegido($event)"
+        ></app-destino-viaje>
     </div>
 </div>

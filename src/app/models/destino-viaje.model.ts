@@ -1,3 +1,4 @@
+/*
 export class DestinoVije{
     nombre!:string;
     imagenUrl!:string;
@@ -10,4 +11,25 @@ export class DestinoVije{
         this.descripcion=desc;
 
     }
+}
+*/
+export class DestinoVije{    
+
+    private seleccionado!:boolean;
+
+    constructor(
+        public nombre:string,
+        public imagenUrl:string,
+        public descripcion:string
+        ){
+    }
+
+    isSelected():boolean{        
+        return this.seleccionado;
+    }
+
+    setSelected(valor:boolean){
+        this.seleccionado=valor;
+    }
+
 }
