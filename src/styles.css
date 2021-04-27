@@ -102,3 +102,30 @@ a.btn-card	{
 			color:	#fff;
 }
 /*	End	card	section	*/
+
+.conteinerEncabezado{	
+	overflow:	hidden;	
+	z-index:	1;	
+	color:	#fff;
+	font-size:	12px;
+	border-radius:	4px;
+	-webkit-border-radius:	4px;
+	-moz-border-radius:	4px;
+	-ms-border-radius:	4px;
+	-o-border-radius:	4px;
+	background: #51589e;
+	margin-bottom: 20px;
+}
+
+.contenedorfondoBlanco{
+	background: url(D:/Semestres/Introduccion-TS-Firebase-tesis/Introduccion/repo-curso-angular-cursera/Curso-Angular-Paul-Reinoso/angular-wishList/src/assets/img/fondoBlanco.JPG);	
+}
+
+.containrTransparente{
+
+	background:  #FFFFFF;
+	filter: alpha(opacity=50);
+	
+	margin: auto;
+	border-radius: 5px;
+}

@@ -5,7 +5,7 @@
             <!-- form	card	login	with	validation	feedback	-->
             <div class="card	card-outline-secondary">
                 <div class="card-header">
-                    <h3 class="mb-0">Whishlist</h3>
+                    <h3 class="mb-0">Lista de deseos</h3>
                 </div>
                 <div class="card-body">
                     <form>
@@ -17,13 +17,20 @@
                             <label for="Imagen	Url">Imagen Url</label>
                             <input type="text" class="form-control" id="imagenUrl" placeholder="Ingresar url..." #url>
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value,url.value)">Guardar!</button><!--esta es una variable de tipo html lo que le da varios atributos pero el value nos da el ingreso del usuario-->
+                        <div class="form-group">
+                            <label for="Descripcion">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una descripcion..." #descripcion>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value,url.value,descripcion.value)">Guardar!</button><!--esta es una variable de tipo html lo que le da varios atributos pero el value nos da el ingreso del usuario-->
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <hr class="mb-5">
+    <br>
+    <br>
+    <br>
     <div class="row">
         <app-destino-viaje *ngFor="let destino of destinos" [destino]="destino"></app-destino-viaje>
     </div>
