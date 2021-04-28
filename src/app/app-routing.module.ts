@@ -7,7 +7,7 @@ import { DestinoDetalleComponent } from './destino-detalle/destino-detalle.compo
 const routes: Routes = [
   {path:'',redirectTo:'home', pathMatch:'full'},
   {path:'home',component:ListaDestinoComponent},
-  {path:'destino',component:DestinoDetalleComponent}
+  {path: 'destino/:id', component: DestinoDetalleComponent }
 
 ];
 
