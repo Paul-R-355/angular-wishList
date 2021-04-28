@@ -23,6 +23,9 @@
                         </div>
                         <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value,url.value,descripcion.value)">Guardar!</button><!--esta es una variable de tipo html lo que le da varios atributos pero el value nos da el ingreso del usuario-->
                     </form>
+                     <!--
+                    <app-form-destino-viaje (onItemAdded)="agregado($event)"></app-form-destino-viaje>
+                    -->
                 </div>
             </div>
         </div>
@@ -33,7 +36,10 @@
     <br>
     <div class="row">
         <!--elegido($event) event pide o pasa el objeto que es necesario para la ejecucion pero se puede pasar el objeto destino qu en nuestro cso es el objeto que requeririamos-->
-        <app-destino-viaje *ngFor="let destino of destinos" [destino]="destino"
+        <app-destino-viaje 
+        *ngFor="let destino of destinos; let indice=index" 
+        [destino]="destino" 
+        [idx]="indice"
         (clicked)="elegido($event)"
         ></app-destino-viaje>
     </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DestinoVije } from '../models/destino-viaje.model';
+import { DestinoViajeComponent } from '../destino-viaje/destino-viaje.component';
 
 @Component({
   selector: 'app-lista-destino',
@@ -27,6 +28,12 @@ export class ListaDestinoComponent implements OnInit {
 
     return false //para que no recargue la pagina pues vinculamos el evento de un boton
   }
+
+
+  agregado(desitnoViaje:DestinoVije ){
+    
+  }
+
 
   elegido(dest:DestinoVije){
     this.destinos.forEach(
