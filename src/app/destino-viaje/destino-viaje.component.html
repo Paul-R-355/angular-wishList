@@ -7,7 +7,7 @@
             <img src={{destino.imagenUrl}} alt="" height="230" width="380">
         </div>
         <span>
-            <h4>{{destino.nombre}}</h4>
+            <h4>{{posicion}} {{destino.nombre}}</h4>
         </span>
     </div>
     <div class="card-desc">
@@ -21,8 +21,28 @@
                 {{destino.descripcion}}
             </p>
         </div>
+        <p>Servicios:</p><!--dos opciones para iterar i mostrar-->
+        <ul>
+            <!--op 1-->
+            <!--
+            <li *ngFor="let sericio of destino.servicios"> iteramos el arreglo donde pusimos los servicios
+                <span>{{sericio}}</span>>  aqui pondremos el contenido, la variable de iteracion
+            </li>
+            -->
+            <!--op 2-->
+            <li *ngFor="let sericio of destino.servicios"> <!--iteramos el arreglo donde pusimos los servicios-->
+                <span [ngSwitch]="sericio"> <!--aqui pondremos el contenido, la variable de iteracion-->
+                <i *ngSwitchCase="'Restaurantes'" style="color: brown;">{{sericio}}</i><!--despendiendo de case se presentara o pasara  algo-->
+                <i *ngSwitchDefault="">{{sericio}}</i><!--solo envio lo que susede pir defecto si nada de lo anterior se a cumplido-->
+            </span>
+            </li>
+        </ul>
         <a href="#" class="btn-card" (click)="ir()">Ir</a>
+        <!--usaremos display que dejara mostrar el spam dependiendo de si esta seleccionado o no OPCION 1-->
+        <!--<span [style.display]="destino.isSelected() ? '' : 'none'"> - PREFERIDO - </span>-->        
         <!--usaremos display que dejara mostrar el spam dependiendo de si esta seleccionado o no-->
-        <span [style.display]="destino.isSelected() ? '' : 'none'"> - PREFERIDO - </span>
+        <span *ngIf="destino.isSelected()"> - PREFERIDO - </span>
+        <a [routerLink]="['/destino']">Detalle</a>
+        <!--*ngNonBindable -- hace que no rendere expresiones de angular cono {{variable}}-->
     </div>
 </div>

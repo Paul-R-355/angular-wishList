@@ -3,7 +3,15 @@
         <div class="container conteinerEncabezado">
             <h1>Bienvenido</h1>
             <h2>Crea tu lista de viajes a lugares deseados:</h2>
+            <a [routerLink]="['/home']">Home</a>
+            <a [routerLink]="['/destino']">Destino</a>
         </div>
+        <!--llama al mismo modulo quemado-->
+        <!--
         <app-lista-destino></app-lista-destino>
+        -->
+        <!--detecta si estoy en un modulo que esta vinculado a un ruteado como el routing.ts-->
+        <!--cuando vea la ruta envia el componente-->
+        <router-outlet></router-outlet>
     </div>
 </div>
