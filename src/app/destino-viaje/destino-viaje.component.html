@@ -42,7 +42,7 @@
         <!--<span [style.display]="destino.isSelected() ? '' : 'none'"> - PREFERIDO - </span>-->        
         <!--usaremos display que dejara mostrar el spam dependiendo de si esta seleccionado o no-->
         <span *ngIf="destino.isSelected()"> - PREFERIDO - </span>
-        <a [routerLink]="['/destino']">Detalle</a>
+        <a [routerLink]="['/destino', destino.id]">Ver!</a>
         <!--*ngNonBindable -- hace que no rendere expresiones de angular cono {{variable}}-->
     </div>
 </div>
