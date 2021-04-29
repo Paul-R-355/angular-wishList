@@ -1,24 +1,28 @@
 import { DestinoVije } from './destino-viaje.model';
 
 export class DestinosApiClient {
+    
     destinos: DestinoVije[];
+
     constructor() {
         this.destinos = [];
     }
-    add(d: DestinoVije) {
-        this.destinos.push(d);
+
+    add(destino: DestinoVije) {
+        this.destinos.push(destino);
     }
-    /*
-	getAll(){
-	  return this.destinos;
-    }*/
 
     getAll(): DestinoVije[] {
         return this.destinos;
     }
-    
+
     getById(id: String): DestinoVije {
-        return this.destinos.filter(function (d) { return d.id.toString() == id; })[0];
+        const destinoDeViaje= this.destinos.
+        filter(
+             (valorActualDestino)=> {
+                 return valorActualDestino.id.toString() == id; //donde el id enviado sea igual al iterado retorna para la carga de la varible
+                })[0];//recuperamos el destino de viaje como elemento solo y no como arreglo y asi lo retornamos en la funcion 
+        return destinoDeViaje;
     }
 
 }

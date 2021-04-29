@@ -8,10 +8,11 @@
                     <h3 class="mb-0">Lista de deseos</h3>
                 </div>
                 <div class="card-body">
+                    <!--
                     <form>
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..." #nombre><!--#nombre es la variable del input-->
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..." #nombre> //#nombre es la variable del input
                         </div>
                         <div class="form-group">
                             <label for="Imagen	Url">Imagen Url</label>
@@ -21,11 +22,11 @@
                             <label for="Descripcion">Descripcion</label>
                             <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una descripcion..." #descripcion>
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value,url.value,descripcion.value)">Guardar!</button><!--esta es una variable de tipo html lo que le da varios atributos pero el value nos da el ingreso del usuario-->
+                        <button type="submit" class="btn btn-primary" (click)="guardar(nombre.value,url.value,descripcion.value)">Guardar!</button> //esta es una variable de tipo html lo que le da varios atributos pero el value nos da el ingreso del usuario
                     </form>
-                     <!--
-                    <app-form-destino-viaje (onItemAdded)="agregado($event)"></app-form-destino-viaje>
                     -->
+                    <app-form-destino-viaje (onItemAdded)="agregado($event)"></app-form-destino-viaje>
+                    
                 </div>
             </div>
         </div>

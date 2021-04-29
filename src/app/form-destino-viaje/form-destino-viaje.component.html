@@ -1,1 +1,28 @@
 <p>form-destino-viaje works!</p>
+<!--[formGroup]="fg" representa el grupo de elementos de un formulario vinculo el grupo de valores a la vriable fg
+    (onSubmit)="guardar(....)" cuando haga submit del formulario invoco a la funcion>
+-->
+<form 
+[formGroup]="fg" 
+(ngSubmit)="guardar(fg.controls['nombre'].value,fg.controls['url'].value,fg.controls['descripcion'].value )">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..."
+        formControlName='nombre'
+        ><!--#nombre ya no es la variable del input ahora, el objeto q´ representa o devuelve el unput la acaja de texto es "fg.controls['nombre']" SI ESTO FALLA por version de angula usar : formControlName='nombre' funciona igual-->
+
+    </div>
+    <div class="form-group">
+        <label for="Imagen	Url">Imagen Url</label>
+        <input type="text" class="form-control" id="imagenUrl" placeholder="Ingresar url..."
+        formControlName='url'
+        >
+    </div>
+    <div class="form-group">
+        <label for="Descripcion">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una descripcion..."
+        formControlName='descripcion'
+        >
+    </div>
+    <button type="submit" class="btn btn-primary" >Guardar!</button><!--esta es una variable de tipo html lo que le da varios atributos pero el value nos da el ingreso del usuario-->
+</form>
