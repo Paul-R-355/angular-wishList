@@ -22,7 +22,7 @@ export class ListaDestinoComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+  //ya no lo usamos ahora usamos el agregado
   guardar(nombre:string,url:string,descripcion:string):boolean{//retorno boolean por ser el evento de un boton clic recarga la pagina hace submit
 
     //console.log(nombre);
@@ -36,9 +36,17 @@ export class ListaDestinoComponent implements OnInit {
     return false //para que no recargue la pagina pues vinculamos el evento de un boton
   }
 
+  agregado(detsinoUno:DestinoVije){//retorno boolean por ser el evento de un boton clic recarga la pagina hace submit
 
-  agregado(desitnoViaje:DestinoVije ){
-    
+    //console.log(nombre);
+    //this.destinos.push(new DestinoVije(nombre,url,descripcion))
+    //let detsinoUno=new DestinoVije(nombre,url,descripcion);
+    this.destinosApiClient.add(detsinoUno);
+    this.onItemAdded.emit(detsinoUno);
+    //console.log(new DestinoVije(nombre,url));
+    //console.log(this.destinos);
+
+    //return false //para que no recargue la pagina pues vinculamos el evento de un boton
   }
 
   elegido(dest:DestinoVije){

@@ -9,13 +9,16 @@ import { DestinosApiClient } from '../models/destinos-api-client.model';
   styleUrls: ['./destino-detalle.component.css']
 })
 export class DestinoDetalleComponent implements OnInit {
+  
   destino!:DestinoVije;
 
-  constructor(private route: ActivatedRoute, private destinosApiClient:DestinosApiClient) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private destinosApiClient:DestinosApiClient) { }
 
   ngOnInit() {
 	  let id = this.route.snapshot.paramMap.get('id');
-      this.destino = this.destinosApiClient.getById(id!);
+    this.destino = this.destinosApiClient.getById(id!);
   }
 
 }
