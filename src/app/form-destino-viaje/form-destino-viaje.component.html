@@ -1,4 +1,3 @@
-<p>form-destino-viaje works!</p>
 <!--[formGroup]="fg" representa el grupo de elementos de un formulario vinculo el grupo de valores a la vriable fg
     (onSubmit)="guardar(....)" cuando haga submit del formulario invoco a la funcion>
 -->
@@ -8,9 +7,16 @@
     <div class="form-group">
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..."
-        formControlName='nombre'
+        formControlName='nombre'        
         ><!--#nombre ya no es la variable del input ahora, el objeto q´ representa o devuelve el unput la acaja de texto es "fg.controls['nombre']" SI ESTO FALLA por version de angula usar : formControlName='nombre' funciona igual-->
-
+        <!--directiva s mostrara si el cmpo es valido respecto a l avalidacion definida en el .ts
+        <div *ngIf="!fg.controls['nombre'].valid">Nombre es obligatorio*</div>
+        -->
+        <!--otra forma de validar-->
+        <div *ngIf="fg.controls['nombre'].hasError('required')">Nombre es obligatorio*</div>
+        <div *ngIf="fg.controls['nombre'].hasError('invalidNombre')">Nombre invalido*</div>
+        <div *ngIf="fg.controls['nombre'].hasError('maxlength')">longitud de nombre minima:{{maxLongitudNombre}}*</div>
+        
     </div>
     <div class="form-group">
         <label for="Imagen	Url">Imagen Url</label>
@@ -24,5 +30,6 @@
         formControlName='descripcion'
         >
     </div>
-    <button type="submit" class="btn btn-primary" >Guardar!</button><!--esta es una variable de tipo html lo que le da varios atributos pero el value nos da el ingreso del usuario-->
+    <!--este if nos permite validr que el boton se mostrara solo si exiten las validaciones que definmaos al formulario-->
+    <button type="submit" class="btn btn-primary" *ngIf="fg.valid">Guardar!</button>
 </form>
