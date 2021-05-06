@@ -11,13 +11,14 @@ import { FormDestinoViajeComponent } from './form-destino-viaje/form-destino-via
 import { DestinosApiClient } from './models/destinos-api-client.model';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DestinoViajeComponent,
     ListaDestinoComponent,
     DestinoDetalleComponent,
-    FormDestinoViajeComponent,
+    FormDestinoViajeComponent,    
   ],
   imports: [
     BrowserModule,
