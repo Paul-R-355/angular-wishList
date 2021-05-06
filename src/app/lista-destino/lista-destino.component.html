@@ -26,7 +26,7 @@
                     </form>
                     -->
                     <app-form-destino-viaje (onItemAdded)="agregado($event)"></app-form-destino-viaje>
-                    
+
                 </div>
             </div>
         </div>
@@ -34,14 +34,24 @@
     <hr class="mb-5">
     <br>
     <br>
-    <br>
     <div class="row">
         <!--elegido($event) event pide o pasa el objeto que es necesario para la ejecucion pero se puede pasar el objeto destino qu en nuestro cso es el objeto que requeririamos-->
-        <app-destino-viaje 
-        *ngFor="let destino of destinosApiClient.getAll(); let indice=index" 
-        [destino]="destino" 
-        [idx]="indice"
-        (clicked)="elegido($event)"
-        ></app-destino-viaje>
+        <app-destino-viaje *ngFor="let destino of destinosApiClient.getAll(); let indice=index" [destino]="destino"
+            [idx]="indice" (clicked)="elegido($event)"></app-destino-viaje>
+    </div>
+    <hr class="mb-5">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Destinos De Viaje:</h5>
+        </div>
+        <br>
+        <div class="col-md-12">
+            <!--muestro la lista de favoritos-->
+            <ul>
+                <li *ngFor="let destFavUpdate of updates">{{destFavUpdate.nombre}}</li>
+            </ul>
+        </div>
     </div>
 </div>

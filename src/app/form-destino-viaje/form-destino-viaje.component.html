@@ -7,11 +7,14 @@
     <div class="form-group">
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..."
-        formControlName='nombre'        
+        formControlName='nombre'                
         ><!--#nombre ya no es la variable del input ahora, el objeto q´ representa o devuelve el unput la acaja de texto es "fg.controls['nombre']" SI ESTO FALLA por version de angula usar : formControlName='nombre' funciona igual-->
         <!--directiva s mostrara si el cmpo es valido respecto a l avalidacion definida en el .ts
         <div *ngIf="!fg.controls['nombre'].valid">Nombre es obligatorio*</div>
         -->
+        <ul>
+            <li *ngFor="let resultado of searchResult">{{resultado}}</li>
+        </ul>
         <!--otra forma de validar-->
         <div *ngIf="fg.controls['nombre'].hasError('required')">Nombre es obligatorio*</div>
         <div *ngIf="fg.controls['nombre'].hasError('invalidNombre')">Nombre invalido*</div>
