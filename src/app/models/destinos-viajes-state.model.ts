@@ -51,7 +51,11 @@ export function reducerDestinosViajes(
 		  	};
 		}
 		case DestinosViajesActionTypes.ELEGIDO_FAVORITO: {
-		    state!.items.forEach(x => x.setSelected(false));
+			state!.items
+			.forEach(
+				(x) =>{
+				 x.setSelected(false);
+				});			
 		    let fav:DestinoVije = (action as ElegidoFavoritoAction).destino;
 		    fav.setSelected(true);
 		    return {
