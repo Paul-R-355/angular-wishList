@@ -37,7 +37,7 @@ let reducersInitialState = {
   imports: [RouterModule.forRoot(routes),//registramos rutas, vinculamos para que se registren rutas en el modulo
     FormsModule,//imports para creacion de formularios
     ReactiveFormsModule,//imports para creacion de formularios    
-    NgRxStoreModule.forRoot(reducers, { initialState: reducersInitialState }),
+    NgRxStoreModule.forRoot(reducers, { initialState: reducersInitialState as any }),
     EffectsModule.forRoot([DestinosViajesEffects]),
     StoreDevtoolsModule.instrument()
   ],
