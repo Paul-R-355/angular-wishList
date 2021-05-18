@@ -22,6 +22,13 @@
             </p>
         </div>
         <p>Servicios:</p><!--dos opciones para iterar i mostrar-->
+        <div>
+            <a href="#" (click)="voteUp()"><i class="material-icons md-18">thumb_up</i></a>
+            &nbsp;
+            <a href="#" (click)="voteDown()"><i class="material-icons md-18">thumb_down</i></a>
+            &nbsp;
+            Votos: {{destino.votes}}
+        </div>
         <ul>
             <!--op 1-->
             <!--
