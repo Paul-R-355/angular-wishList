@@ -19,6 +19,7 @@ export class DestinoVije{
     private seleccionado!:boolean;
     public servicios!:string[];
     public id = uuid();//genera ids randomicos del tipo: 11bf5b37-e0b8-42e0-8dcf-dc8c4aefc000    
+    public votes = 0;
 
     constructor(
         public nombre:string,
@@ -35,5 +36,12 @@ export class DestinoVije{
     setSelected(valor:boolean){
         this.seleccionado=valor;
     }
+
+    voteUp(): any {
+        this.votes++;
+      }
+      voteDown(): any {
+        this.votes--;
+      }
 
 }

@@ -23,8 +23,20 @@ export const intializeDestinosViajesState = ()=>{
 //ACCIONES
 export enum DestinosViajesActionTypes {
   NUEVO_DESTINO = '[Destinos Viajes] Nuevo',
-  ELEGIDO_FAVORITO = '[Destinos Viajes] Favorito'
+  ELEGIDO_FAVORITO = '[Destinos Viajes] Favorito',
+  VOTE_UP = '[Destinos Viajes] Vote Up',
+  VOTE_DOWN = '[Destinos Viajes] Vote Down'
 }
+
+export class VoteUpAction implements Action {
+	type = DestinosViajesActionTypes.VOTE_UP;
+	constructor(public destino: DestinoVije) {}
+  }
+  
+  export class VoteDownAction implements Action {
+	type = DestinosViajesActionTypes.VOTE_DOWN;
+	constructor(public destino: DestinoVije) {}
+  }
 
 export class NuevoDestinoAction implements Action {
   type = DestinosViajesActionTypes.NUEVO_DESTINO;
@@ -36,7 +48,7 @@ export class ElegidoFavoritoAction implements Action {
   constructor(public destino: DestinoVije) {}
 }
 
-export type DestinosViajesActions = NuevoDestinoAction | ElegidoFavoritoAction;
+export type DestinosViajesActions = NuevoDestinoAction | ElegidoFavoritoAction | VoteUpAction | VoteDownAction;
 
 //REDUCERS
 export function reducerDestinosViajes(
@@ -62,6 +74,16 @@ export function reducerDestinosViajes(
 		    	...state!,
 		  		favorito: fav
 		    };
+		}
+		case DestinosViajesActionTypes.VOTE_UP: {
+			const d: DestinoVije = (action as VoteUpAction).destino;
+			d.voteUp();
+			return { ...state! };//clonando
+		}
+		case DestinosViajesActionTypes.VOTE_DOWN: {
+			const d: DestinoVije = (action as VoteDownAction).destino;
+			d.voteDown();
+			return { ...state! };//clonando
 		}
 	}
 	return state!;
