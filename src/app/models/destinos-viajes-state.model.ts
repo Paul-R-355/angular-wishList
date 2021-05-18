@@ -40,27 +40,27 @@ export type DestinosViajesActions = NuevoDestinoAction | ElegidoFavoritoAction;
 
 //REDUCERS
 export function reducerDestinosViajes(
-	state:DestinosViajesState,
-	action:DestinosViajesActions
+	state:DestinosViajesState | undefined,
+	action:DestinosViajesActions | Action
 ) : DestinosViajesState {
 	switch (action.type) {
 		case DestinosViajesActionTypes.NUEVO_DESTINO: {
 		  return {
-		  		...state,
-		  		items: [...state.items, (action as NuevoDestinoAction).destino ]
+		  		...state!,
+		  		items: [...state!.items, (action as NuevoDestinoAction).destino ]
 		  	};
 		}
 		case DestinosViajesActionTypes.ELEGIDO_FAVORITO: {
-		    state.items.forEach(x => x.setSelected(false));
+		    state!.items.forEach(x => x.setSelected(false));
 		    let fav:DestinoVije = (action as ElegidoFavoritoAction).destino;
 		    fav.setSelected(true);
 		    return {
-		    	...state,
+		    	...state!,
 		  		favorito: fav
 		    };
 		}
 	}
-	return state;
+	return state!;
 }
 
 //EFFECTS
